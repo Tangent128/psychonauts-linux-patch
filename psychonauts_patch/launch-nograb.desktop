@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Psychonauts (Patched)
+Exec=sh launch-nograb.sh
+Icon=./psychonauts.png
