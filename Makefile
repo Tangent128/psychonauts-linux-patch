@@ -1,8 +1,10 @@
 
 SDL1_INC_PATH=/usr/include/SDL
 
-CFLAGS= -Wall -Wextra -pedantic -std=c99
-CC=gcc -shared -fPIC $(CFLAGS) -I $(SDL1_INC_PATH)
+CFLAGS= -Wall -Wextra -pedantic -std=c99 -I $(SDL1_INC_PATH)
+LFLAGS= -shared -fPIC
 
-sdl1-nograb.so: c/sdl1-nograb.c
-	$(CC) -o sdl1-nograb.so c/sdl1-nograb.c
+CC=gcc -m32
+
+sdl1-nograb.so: Makefile c/sdl1-nograb.c
+	$(CC) $(CFLAGS) $(LFLAGS) -o sdl1-nograb.so c/sdl1-nograb.c
